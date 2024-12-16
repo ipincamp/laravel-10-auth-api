@@ -1,0 +1,31 @@
+requirements:
+- xampp / laragon
+- php
+- composer
+
+
+https://laravel.com/docs/10.x/installation#creating-a-laravel-project
+
+$ composer create-project laravel/laravel:^10.0 music-api
+
+
+token error?
+https://github.com/laravel/laravel/releases?q=v10&expanded=true
+
+pilih versi v10.3.3
+
+$ composer install
+$ php artisan key:generate
+
+edit .env
+
+php artisan migrate		> ketik yes lalu enter
+
+php artisan serve
+
+
+$ php artisan make:controller AuthController --api
+
+code register() in AuthController
+
+code 
