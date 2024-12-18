@@ -30,6 +30,7 @@ class AuthController extends Controller
             'message' => 'Login successful',
             'user' => auth()->user(),
             'token' => auth()->user()->createToken('authToken')->plainTextToken,
+            'role' => auth()->user()->getRoleNames()->first(),
         ], 200);
     }
 
@@ -51,6 +52,9 @@ class AuthController extends Controller
             'email' => $validation['email'],
             'password' => bcrypt($validation['password']),
         ]);
+
+        // assign role
+        $user->assignRole('customer');
 
         // return response
         return response()->json([
